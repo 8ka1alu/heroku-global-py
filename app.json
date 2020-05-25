@@ -8,7 +8,7 @@
     "Python"
   ],
   "repository": "https://github.com/xxx/xxx",
-  "logo": "https://github.com/8ka1alu/heroku-global-py/blob/master/logo.png",
+  "logo": "https://raw.githubusercontent.com/xxx/xxx/master/logo.png",
   "env": {
     "DISCORD_BOT_TOKEN": {
       "description": "YOUR DISCORD BOT TOKEN.",
@@ -21,6 +21,6 @@
   },
   "addons": [
     "heroku-redis:hobby-dev",
-    "scheduler:standard"
+    "heroku-postgres:hobby-dev"
   ]
 }
