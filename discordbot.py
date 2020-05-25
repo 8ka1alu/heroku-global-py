@@ -8,9 +8,10 @@ prefix = os.environ['DISCORD_BOT_PREFIX'] #プレフィックス
 
 # 読み込むコグの名前を格納しておく。
 INITIAL_EXTENSIONS = [
-    'cogs.bans',
-    'cogs.global_chat',
-    'cogs.databases'
+    'cogs.glban',
+    'cogs.glchat',
+    'cogs.gladd',
+    'cogs.gldel'
 ]
 
 # クラスの定義。ClientのサブクラスであるBotクラスを継承。
