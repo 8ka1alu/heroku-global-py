@@ -1,11 +1,11 @@
 
 {
-  "name": "アプリ名",
-  "description": "アプリの説明",
+  "name": "Discord-heroku-global",
+  "description": "herokuのデータベース登録型のGlobal Chatです",
   "keywords": [
-    "XXX",
-    "YYY",
-    "ZZZ"
+    "Discord",
+    "Heroku",
+    "Python"
   ],
   "repository": "https://github.com/xxx/xxx",
   "logo": "https://raw.githubusercontent.com/xxx/xxx/master/logo.png",
