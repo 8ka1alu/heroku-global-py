@@ -1,9 +1,6 @@
 from discord.ext import commands # Bot Commands Frameworkのインポート
 import discord
-import asyncio
-import datetime
-
-great_owner_id = 459936557432963103
+import r
 
 # コグとして用いるクラスを定義。
 class global_chat(commands.Cog):
@@ -11,21 +8,12 @@ class global_chat(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(aliases=['gc'])
-    async def globalchat(self, ctx):
-        await ctx.channel.send("Global Chatです。\n`【グローバルチャット】`という名前でチャンネルを作ると接続されます。")
-
     @commands.Cog.listener()
     async def on_message(self, message):
         if message.author.bot:
             return
 
-        date = datetime.datetime.now()
-        filename = f"{date.year}{date.month}{date.day}-{date.hour}{date.minute}{date.second}" 
-        #画像保存名(基本)を｢年月日-時分秒｣とする。
-
-        GLOBAL_WEBHOOK_NAME = "RUTIA-GLOBAL"
-        #グローバルチャットのウェブフック名
+        
         GLOBAL_CH_NAME = "【グローバルチャット】"
 
         if message.channel.name == GLOBAL_CH_NAME:
