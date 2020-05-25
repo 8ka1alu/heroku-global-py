@@ -8,7 +8,7 @@
     "Python"
   ],
   "repository": "https://github.com/xxx/xxx",
-  "logo": "https://raw.githubusercontent.com/xxx/xxx/master/logo.png",
+  "logo": "https://github.com/8ka1alu/heroku-global-py/blob/master/logo.png",
   "env": {
     "HUBOT_HEROKU_KEEPALIVE_INTERVAL": {
       "description": "hubot-heroku-keepalive interval.",
