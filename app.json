@@ -14,6 +14,10 @@
       "description": "YOUR DISCORD BOT TOKEN.",
       "value": ""
     },
+    "DISCORD_BOT_PREFIX": {
+      "description": "Your Bot Prefix",
+      "value": ""
+    },
     "TZ": {
       "description": "Your Time Zone.",
       "value": "Asia/Tokyo"
