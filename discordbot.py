@@ -4,7 +4,7 @@ import os
 import discord
 
 TOKEN = os.environ['DISCORD_BOT_TOKEN']
-prefix = 'rt' #プレフィックス
+prefix = os.environ['DISCORD_BOT_PREFIX'] #プレフィックス
 
 # 読み込むコグの名前を格納しておく。
 INITIAL_EXTENSIONS = [
