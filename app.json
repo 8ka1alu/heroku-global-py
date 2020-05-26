@@ -21,6 +21,10 @@
     "TZ": {
       "description": "Your Time Zone.",
       "value": "Asia/Tokyo"
+    },
+    "DISCORD_BOT_DEVELOPER": {
+      "description": "Your Developer Id.",
+      "value": "0"
     }
   },
   "addons": [
