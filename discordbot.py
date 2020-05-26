@@ -46,7 +46,20 @@ class MyBot(commands.Bot):
             if i == global_ch:
                 count+=1
         if count>0:
-            print(ky)
+            smsd=conn.smembers(global_ch)
+            count=0
+            for q in smsd:
+                q=str(q)
+                if q=="0":
+                    count+=1
+            if count>0:
+                p=conn.srem(global_ch,"0")
+                if p==True:
+                    print("正常起動")
+                else:
+                    print("異常発生")
+            else:
+                print(ky)
         else:
             p=conn.sadd(global_ch,"0")
             if p==True:
