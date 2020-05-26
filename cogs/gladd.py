@@ -28,12 +28,12 @@ class addglobal(commands.Cog):
             a1=conn.sadd(cgi,cci)
             a2=conn.sadd(global_ch,cci)
             if a1==True and a2==True:
-                embed = discord.Embed(title="**登録情報**", description=None)  
+                embed = discord.Embed(title="**登録情報**", description=None,color=0x3498db)  
                 embed.add_field(name="登録完了", value=f"`登録チャンネル：{ccn}`")
                 return await ctx.send(embed=embed)
             else:
                 embed = discord.Embed(title="**登録情報**", description=None)  
-                embed.add_field(name="登録失敗", value=f"`開発者に問い合わせて下さい`")
+                embed.add_field(name="登録失敗", value=f"`開発者に問い合わせて下さい`",color=0x992d22)
                 return await ctx.send(embed=embed)
 
         elif count>0:
@@ -46,20 +46,20 @@ class addglobal(commands.Cog):
                 a1=conn.sadd(cgi,cci)
                 a2=conn.sadd(global_ch,cci)
                 if a1==True and a2==True:
-                    embed = discord.Embed(title="**登録情報**", description=None)  
+                    embed = discord.Embed(title="**登録情報**", description=None,color=0x3498db) 
                     embed.add_field(name="登録完了", value=f"`登録チャンネル：{ccn}`")
                     return await ctx.send(embed=embed)
                 else:
                     embed = discord.Embed(title="**登録情報**", description=None)  
-                    embed.add_field(name="登録失敗", value=f"`開発者に問い合わせて下さい`")
+                    embed.add_field(name="登録失敗", value=f"`開発者に問い合わせて下さい`",color=0x992d22)
                     return await ctx.send(embed=embed)
             elif counts>0:
                 embed = discord.Embed(title="**登録情報**", description=None)  
-                embed.add_field(name="既に登録されています。", value=f"`登録チャンネル：{ccn}`")
+                embed.add_field(name="既に登録されています。", value=f"`登録チャンネル：{ccn}`",color=0x992d22)
                 return await ctx.send(embed=embed)
 
         else:
-            embed = discord.Embed(title="**エラー**", description="開発者に問い合わせて下さい")  
+            embed = discord.Embed(title="**エラー**", description="開発者に問い合わせて下さい",color=0x992d22)  
             return await ctx.send(embed=embed)
 
 def setup(bot):
