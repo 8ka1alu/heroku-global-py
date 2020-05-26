@@ -16,7 +16,7 @@ class global_chat(commands.Cog):
         if message.author.bot:
             return
         if message.content in ng_word:
-            return
+            return await message.delete()
         count=0
         conn=r.connect()
         sm=conn.smembers("gloch")
