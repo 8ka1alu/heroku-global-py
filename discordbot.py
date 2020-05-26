@@ -9,7 +9,6 @@ prefix = os.environ['DISCORD_BOT_PREFIX'] #プレフィックス
 
 # 読み込むコグの名前を格納しておく。
 INITIAL_EXTENSIONS = [
-    'cogs.glban',
     'cogs.glchat',
     'cogs.gladd',
     'cogs.gldel'
@@ -41,7 +40,7 @@ class MyBot(commands.Bot):
         conn=r.connect()
         ky=conn.keys()
         global_ch="gloch"
-        ky=int(ky)
+        ky=str(ky)
         if not ky in global_ch:
             p=conn.sadd(global_ch,"0")
             if p==True:
