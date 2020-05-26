@@ -1,6 +1,7 @@
 import os
 import r
 from discord.ext import commands
+import discord
 
 class addglobal(commands.Cog):
 
