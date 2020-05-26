@@ -40,7 +40,6 @@ class MyBot(commands.Bot):
         conn=r.connect()
         ky=conn.keys()
         global_ch="gloch"
-        ky=str(ky)
         if not ky in global_ch:
             p=conn.sadd(global_ch,"0")
             if p==True:
