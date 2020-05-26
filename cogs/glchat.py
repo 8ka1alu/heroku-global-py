@@ -42,7 +42,7 @@ class global_chat(commands.Cog):
                                 embed = discord.Embed(title=message.content,
                                                       description=None,
                                                       color=0x00bfff)
-                                embed.set_author(name=message.author.display_name, 
+                                embed.set_author(name=message.author, 
                                                  icon_url=message.author.avatar_url)
                                 embed.set_footer(text=f"{message.guild.name} / {message.channel.name}",
                                                  icon_url=message.guild.icon_url_as(format="png"))
@@ -54,7 +54,7 @@ class global_chat(commands.Cog):
                                                       description=None,
                                                       color=0x00bfff)
                                 embed.set_image(url=p.url)
-                                embed.set_author(name=message.author.display_name, 
+                                embed.set_author(name=message.author, 
                                                  icon_url=message.author.avatar_url)
                                 embed.set_footer(text=f"{message.guild.name} / {message.channel.name}",
                                                  icon_url=message.guild.icon_url_as(format="png"))
@@ -65,7 +65,7 @@ class global_chat(commands.Cog):
                     embed = discord.Embed(title=message.content,
                                           description=None,
                                           color=0x00bfff)
-                    embed.set_author(name=message.author.display_name, 
+                    embed.set_author(name=message.author, 
                                      icon_url=message.author.avatar_url)
                     embed.set_footer(text=f"{message.guild.name} / {message.channel.name}",
                                      icon_url=message.guild.icon_url_as(format="png"))
