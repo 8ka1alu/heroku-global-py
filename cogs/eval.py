@@ -11,7 +11,7 @@ import os
 from discord.ext import commands
 from discord import NotFound, Embed,  Forbidden
 
-admin_list = os.
+admin_list = os.environ['DISCORD_BOT_DEVELOPER']
 
 def cleanup_code(content):
     if content.startswith('```') and content.endswith('```'):
