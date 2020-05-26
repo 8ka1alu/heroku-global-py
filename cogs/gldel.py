@@ -25,7 +25,7 @@ class delglobal(commands.Cog):
             if i == gi:
                 count+=1
         if count==0: 
-            embed = discord.Embed(title="**エラー**", description="登録がされていない鯖です")  
+            embed = discord.Embed(title="**エラー**", description="登録がされていない鯖です",color=0x992d22)  
             return await ctx.send(embed=embed)
 
         elif count>0:
@@ -35,20 +35,20 @@ class delglobal(commands.Cog):
                 if ch == ci:
                     counts+=1
             if counts==0:
-                embed = discord.Embed(title="**エラー**", description="このチャンネルは登録されていません")  
+                embed = discord.Embed(title="**エラー**", description="このチャンネルは登録されていません",color=0x992d22)  
                 return await ctx.send(embed=embed)
             elif counts>0:
                 a1=conn.srem(cgi, cci)
                 a2=conn.srem(global_ch, cci)
                 if a1==True and a2==True:
-                    embed = discord.Embed(title="**登録解消情報**", description=None)  
+                    embed = discord.Embed(title="**登録解消情報**", description=None,color=0xe74c3c) 
                     embed.add_field(name="登録を解消しました", value=f"`登録チャンネル：{ccn}`")
                     return await ctx.send(embed=embed)
                 else:
-                    embed = discord.Embed(title="**エラー**", description="開発者に問い合わせて下さい`48`")  
+                    embed = discord.Embed(title="**エラー**", description="開発者に問い合わせて下さい`48`",color=0x992d22)  
                     return await ctx.send(embed=embed)
         else:
-            embed = discord.Embed(title="**エラー**", description="開発者に問い合わせて下さい`51`")  
+            embed = discord.Embed(title="**エラー**", description="開発者に問い合わせて下さい`51`",color=0x992d22)  
             return await ctx.send(embed=embed)
 
 def setup(bot):
