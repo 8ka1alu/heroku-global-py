@@ -1,7 +1,7 @@
 # heroku-global-py
 
 ## このコードについて
-heroku postgresとheroku railsを使ったGlobal Chatです。  
+heroku postgresとheroku railsを使ったDiscord Global Chat Botです。  
 Python Version:3.8.2  
 Discord Version:1.3.3
 
