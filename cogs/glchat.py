@@ -33,7 +33,8 @@ class global_chat(commands.Cog):
                     for iq in sm:
                         ch=self.bot.get_channel(int(iq))
                         if ch.id == message.channel.id:
-                            pass await message.add_reaction("✔️")
+                            await message.add_reaction("✔️")
+                            pass 
                         if message.content:
                             embed = discord.Embed(title=message.content,
                                                   description=None,
