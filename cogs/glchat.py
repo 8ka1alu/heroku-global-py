@@ -53,7 +53,7 @@ class global_chat(commands.Cog):
                         for i in sm:
                             ch=self.bot.get_channel(int(i))
                             await ch.send(embed=embed)
-                        await message.delete()
+                        
                 else:
                     embed = discord.Embed(title=message.content,
                                           description=None,
