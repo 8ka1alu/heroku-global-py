@@ -30,17 +30,40 @@ class global_chat(commands.Cog):
 
             else:
                 await message.delete()
-                embed = discord.Embed(title=message.content,
-                                      description=None,
-                                      color=0x00bfff)
-                embed.set_author(name=message.author.display_name, 
-                                 icon_url=message.author.avatar_url_as(format="png"))
-                embed.set_footer(text=f"{message.guild.name} / {message.channel.name}",
-                                 icon_url=message.guild.icon_url_as(format="png"))
-                # Embedインスタンスを生成、投稿者、投稿場所などの設定
-                for i in sm:
-                    ch=self.bot.get_channel(int(i))
-                    await ch.send(embed=embed)
+                if message.attachments:
+                    if message.content:
+                        embed = discord.Embed(title=message.content,
+                                              description=None,
+                                              color=0x00bfff)
+                        for i in sm:
+                            ch=self.bot.get_channel(int(i))
+                            await ch.send(embed=embed)
+                    m=0
+                    for p in message.attachments:
+                        m+=1   
+                        embed = discord.Embed(title=f"画像({m})",
+                                              description=None,
+                                              color=0x00bfff)
+                        embed.set_image(url=p.url)
+                        embed.set_author(name=message.author.display_name, 
+                                         icon_url=message.author.avatar_url_as(format="png"))
+                        embed.set_footer(text=f"{message.guild.name} / {message.channel.name}",
+                                         icon_url=message.guild.icon_url_as(format="png"))
+                        for i in sm:
+                            ch=self.bot.get_channel(int(i))
+                            await ch.send(embed=embed)
+                else:
+                    embed = discord.Embed(title=message.content,
+                                          description=None,
+                                          color=0x00bfff)
+                    embed.set_author(name=message.author.display_name, 
+                                     icon_url=message.author.avatar_url_as(format="png"))
+                    embed.set_footer(text=f"{message.guild.name} / {message.channel.name}",
+                                     icon_url=message.guild.icon_url_as(format="png"))
+                    # Embedインスタンスを生成、投稿者、投稿場所などの設定
+                    for i in sm:
+                        ch=self.bot.get_channel(int(i))
+                        await ch.send(embed=embed)
         else:
             await message.channel.send("エラー")                      
                         
