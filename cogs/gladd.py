@@ -14,6 +14,7 @@ class addglobal(commands.Cog):
         cgi=ctx.guild.id
         cci=ctx.channel.id
         ccn=ctx.channel.name
+        global_ch="gloch"
         conn=r.connect()
         k=conn.keys()
         gi=str(cgi)
@@ -24,7 +25,8 @@ class addglobal(commands.Cog):
                 count+=1
         if count==0: #データベース未登録時
             a1=conn.sadd(cgi,cci)
-            if a1==True:
+            a2=conn.sadd(gloch,cci)
+            if a1==True and a2==True:
                 embed = discord.Embed(title="**登録情報**", description=None)  
                 embed.add_field(name="登録完了", value=f"`登録チャンネル：{ccn}`")
                 return await ctx.send(embed=embed)
@@ -41,7 +43,8 @@ class addglobal(commands.Cog):
                     counts+=1
             if counts==0:
                 a1=conn.sadd(cgi,cci)
-                if a1==True:
+                a2=conn.sadd(gloch,cci)
+                if a1==True and a2==True:
                     embed = discord.Embed(title="**登録情報**", description=None)  
                     embed.add_field(name="登録完了", value=f"`登録チャンネル：{ccn}`")
                     return await ctx.send(embed=embed)
