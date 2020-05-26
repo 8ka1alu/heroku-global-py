@@ -45,7 +45,7 @@ class MyBot(commands.Bot):
             i=str(i)
             if i == global_ch:
                 count+=1
-        if count==0 :
+        if count>0:
             print(ky)
         else:
             p=conn.sadd(global_ch,"0")
