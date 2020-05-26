@@ -41,7 +41,8 @@ class global_chat(commands.Cog):
                 for i in sms:
                     ch=self.bot.get_channel(int(sms))
                     await ch.send(embed=embed)
-                        
+        else:
+            await ctx.send("エラー")                      
                         
 def setup(bot):
     bot.add_cog(global_chat(bot))
