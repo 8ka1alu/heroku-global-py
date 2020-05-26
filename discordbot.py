@@ -2,6 +2,7 @@ from discord.ext import commands, tasks # Bot Commands Frameworkをインポー�
 import traceback # エラー表示のためにインポート
 import os
 import discord
+import r
 
 TOKEN = os.environ['DISCORD_BOT_TOKEN']
 prefix = os.environ['DISCORD_BOT_PREFIX'] #プレフィックス
@@ -37,6 +38,18 @@ class MyBot(commands.Bot):
         print('----------------')
         print('Hello World !!')
         await self.change_presence(status=discord.Status.idle,activity=discord.Game(name=f'Ping:{self.ws.latency * 1000:.0f}ms')) 
+        conn=r.connect()
+        ky=conn.keys()
+        global_ch="gloch"
+        if not ky in global_ch:
+            p=conn.sadd(global_ch,"0")
+            if p==True:
+                print("正常起動")
+            else:
+                print("異常発生")
+        else:
+            print(ky)
+        
  
 class JapaneseHelpCommand(commands.DefaultHelpCommand):
     def __init__(self):
