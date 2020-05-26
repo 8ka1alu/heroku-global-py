@@ -40,8 +40,12 @@ class MyBot(commands.Bot):
         conn=r.connect()
         ky=conn.keys()
         global_ch="gloch"
-        ky=str(ky)
-        if ky in global_ch:
+        count=0
+        for i in ky:
+            i=str(i)
+            if i == global_ch:
+                count+=1
+        if count==0 :
             print(ky)
         else:
             p=conn.sadd(global_ch,"0")
