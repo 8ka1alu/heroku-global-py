@@ -73,8 +73,6 @@ class global_chat(commands.Cog):
                     for iq in sm:
                         ch=self.bot.get_channel(int(iq))
                         await ch.send(embed=embed)
-        else:
-            await message.channel.send("エラー")                      
-                        
+        
 def setup(bot):
     bot.add_cog(global_chat(bot))
