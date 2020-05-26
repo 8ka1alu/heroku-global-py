@@ -14,6 +14,7 @@ class delglobal(commands.Cog):
         cgi=ctx.guild.id
         cci=ctx.channel.id
         ccn=ctx.channel.name
+        global_ch="gloch"
         conn=r.connect()
         k=conn.keys()
         gi=str(cgi)
@@ -36,11 +37,15 @@ class delglobal(commands.Cog):
                 embed = discord.Embed(title="**エラー**", description="このチャンネルは登録されていません")  
                 return await ctx.send(embed=embed)
             elif counts>0:
-                a2=conn.srem(cgi, cci)
-                embed = discord.Embed(title="**登録解消情報**", description=None)  
-                embed.add_field(name="登録を解消しました", value=f"`登録チャンネル：{ccn}`")
-                return await ctx.send(embed=embed)
-
+                a1=conn.srem(cgi, cci)
+                a2=conn.srem(global_ch, cci)
+                if a1==True and a2==True:
+                    embed = discord.Embed(title="**登録解消情報**", description=None)  
+                    embed.add_field(name="登録を解消しました", value=f"`登録チャンネル：{ccn}`")
+                    return await ctx.send(embed=embed)
+                else:
+                    embed = discord.Embed(title="**エラー**", description="開発者に問い合わせて下さい")  
+                    return await ctx.send(embed=embed)
         else:
             embed = discord.Embed(title="**エラー**", description="開発者に問い合わせて下さい")  
             return await ctx.send(embed=embed)
