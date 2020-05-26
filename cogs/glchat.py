@@ -18,7 +18,7 @@ class global_chat(commands.Cog):
         conn=r.connect()
         sm=conn.smembers("gloch")
         for i in sm:
-            i=str(i)
+            i=int(i)
             if i==message.channel.id:
                 count+=1
         if count>0:
@@ -42,7 +42,7 @@ class global_chat(commands.Cog):
                     ch=self.bot.get_channel(int(sms))
                     await ch.send(embed=embed)
         else:
-            await ctx.send("エラー")                      
+            await message.channel.send("エラー")                      
                         
 def setup(bot):
     bot.add_cog(global_chat(bot))
