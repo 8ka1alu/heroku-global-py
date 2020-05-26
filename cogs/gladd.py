@@ -32,8 +32,8 @@ class addglobal(commands.Cog):
                 embed.add_field(name="登録完了", value=f"`登録チャンネル：{ccn}`")
                 return await ctx.send(embed=embed)
             else:
-                embed = discord.Embed(title="**登録情報**", description=None)  
-                embed.add_field(name="登録失敗", value=f"`開発者に問い合わせて下さい`",color=0x992d22)
+                embed = discord.Embed(title="**登録情報**", description=None,color=0x992d22)  
+                embed.add_field(name="登録失敗", value=f"`開発者に問い合わせて下さい`")
                 return await ctx.send(embed=embed)
 
         elif count>0:
@@ -50,12 +50,12 @@ class addglobal(commands.Cog):
                     embed.add_field(name="登録完了", value=f"`登録チャンネル：{ccn}`")
                     return await ctx.send(embed=embed)
                 else:
-                    embed = discord.Embed(title="**登録情報**", description=None)  
-                    embed.add_field(name="登録失敗", value=f"`開発者に問い合わせて下さい`",color=0x992d22)
+                    embed = discord.Embed(title="**登録情報**", description=None,color=0x992d22)  
+                    embed.add_field(name="登録失敗", value=f"`開発者に問い合わせて下さい`")
                     return await ctx.send(embed=embed)
             elif counts>0:
-                embed = discord.Embed(title="**登録情報**", description=None)  
-                embed.add_field(name="既に登録されています。", value=f"`登録チャンネル：{ccn}`",color=0x992d22)
+                embed = discord.Embed(title="**登録情報**", description=None,color=0x992d22)
+                embed.add_field(name="既に登録されています。", value=f"`登録チャンネル：{ccn}`")
                 return await ctx.send(embed=embed)
 
         else:
