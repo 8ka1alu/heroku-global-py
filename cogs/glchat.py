@@ -14,11 +14,14 @@ class global_chat(commands.Cog):
     async def on_message(self, message):
         if message.author.bot:
             return
-
+        count=0
         conn=r.connect()
         sm=conn.smembers("gloch")
-        sms=sm
-        if message.channel.id in sms:
+        for i in sm:
+            i=str(i)
+            if i==message.channel.id:
+                count+=1
+        if count>0:
         #発言チャンネルidがsmsに入っていたら反応
 
             if message.content.startswith(prefix):
