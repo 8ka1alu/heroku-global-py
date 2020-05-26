@@ -3,7 +3,7 @@ import discord
 import r
 import os
 prefix = os.environ['DISCORD_BOT_PREFIX']
-ng_word=['@here','@everyone','@']
+ng_word=['@here','@everyone']
 
 # コグとして用いるクラスを定義。
 class global_chat(commands.Cog):
