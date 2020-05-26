@@ -17,7 +17,7 @@ class global_chat(commands.Cog):
 
         conn=r.connect()
         sm=conn.smembers("gloch")
-        sms=int(sm)
+        sms=str(sm)
         if message.channel.id in sms:
         #発言チャンネルidがsmsに入っていたら反応
 
