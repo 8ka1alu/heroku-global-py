@@ -38,8 +38,8 @@ class global_chat(commands.Cog):
                 embed.set_footer(text=f"{message.guild.name} / {message.channel.name}",
                                  icon_url=message.guild.icon_url_as(format="png"))
                 # Embedインスタンスを生成、投稿者、投稿場所などの設定
-                for i in sms:
-                    ch=self.bot.get_channel(int(sms))
+                for i in sm:
+                    ch=self.bot.get_channel(int(i))
                     await ch.send(embed=embed)
         else:
             await message.channel.send("エラー")                      
