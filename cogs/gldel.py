@@ -45,10 +45,10 @@ class delglobal(commands.Cog):
                     embed.add_field(name="登録を解消しました", value=f"`登録チャンネル：{ccn}`")
                     return await ctx.send(embed=embed)
                 else:
-                    embed = discord.Embed(title="**エラー**", description="開発者に問い合わせて下さい")  
+                    embed = discord.Embed(title="**エラー**", description="開発者に問い合わせて下さい`48`")  
                     return await ctx.send(embed=embed)
         else:
-            embed = discord.Embed(title="**エラー**", description="開発者に問い合わせて下さい")  
+            embed = discord.Embed(title="**エラー**", description="開発者に問い合わせて下さい`51`")  
             return await ctx.send(embed=embed)
 
 def setup(bot):
