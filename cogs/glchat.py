@@ -43,7 +43,7 @@ class global_chat(commands.Cog):
                                                       description=None,
                                                       color=0x00bfff)
                                 embed.set_author(name=message.author.display_name, 
-                                                 icon_url=message.author.avatar_url_as(format="png"))
+                                                 icon_url=message.author.avatar_url)
                                 embed.set_footer(text=f"{message.guild.name} / {message.channel.name}",
                                                  icon_url=message.guild.icon_url_as(format="png"))
                                 await ch.send(embed=embed)
@@ -55,7 +55,7 @@ class global_chat(commands.Cog):
                                                       color=0x00bfff)
                                 embed.set_image(url=p.url)
                                 embed.set_author(name=message.author.display_name, 
-                                                 icon_url=message.author.avatar_url_as(format="png"))
+                                                 icon_url=message.author.avatar_url)
                                 embed.set_footer(text=f"{message.guild.name} / {message.channel.name}",
                                                  icon_url=message.guild.icon_url_as(format="png"))
                                 await ch.send(embed=embed)
@@ -66,7 +66,7 @@ class global_chat(commands.Cog):
                                           description=None,
                                           color=0x00bfff)
                     embed.set_author(name=message.author.display_name, 
-                                     icon_url=message.author.avatar_url_as(format="png"))
+                                     icon_url=message.author.avatar_url)
                     embed.set_footer(text=f"{message.guild.name} / {message.channel.name}",
                                      icon_url=message.guild.icon_url_as(format="png"))
                     # Embedインスタンスを生成、投稿者、投稿場所などの設定
