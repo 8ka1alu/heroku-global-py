@@ -25,7 +25,7 @@ class addglobal(commands.Cog):
                 count+=1
         if count==0: #データベース未登録時
             a1=conn.sadd(cgi,cci)
-            a2=conn.sadd(gloch,cci)
+            a2=conn.sadd(global_ch,cci)
             if a1==True and a2==True:
                 embed = discord.Embed(title="**登録情報**", description=None)  
                 embed.add_field(name="登録完了", value=f"`登録チャンネル：{ccn}`")
@@ -43,7 +43,7 @@ class addglobal(commands.Cog):
                     counts+=1
             if counts==0:
                 a1=conn.sadd(cgi,cci)
-                a2=conn.sadd(gloch,cci)
+                a2=conn.sadd(global_ch,cci)
                 if a1==True and a2==True:
                     embed = discord.Embed(title="**登録情報**", description=None)  
                     embed.add_field(name="登録完了", value=f"`登録チャンネル：{ccn}`")
