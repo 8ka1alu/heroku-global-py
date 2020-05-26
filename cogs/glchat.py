@@ -29,7 +29,8 @@ class global_chat(commands.Cog):
             #発言時、頭にprefixがついていたらpass
 
             else:
-                await message.delete()
+                if not message.attachments:
+                    await message.delete()
                 if message.attachments:
                     if message.content:
                         embed = discord.Embed(title=message.content,
@@ -52,6 +53,7 @@ class global_chat(commands.Cog):
                         for i in sm:
                             ch=self.bot.get_channel(int(i))
                             await ch.send(embed=embed)
+                        await message.delete()
                 else:
                     embed = discord.Embed(title=message.content,
                                           description=None,
