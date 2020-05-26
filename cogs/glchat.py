@@ -2,7 +2,7 @@ from discord.ext import commands # Bot Commands Frameworkのインポート
 import discord
 import r
 import os
-prefix=0
+prefix = os.environ['DISCORD_BOT_PREFIX']
 
 # コグとして用いるクラスを定義。
 class global_chat(commands.Cog):
