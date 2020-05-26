@@ -6,12 +6,11 @@ import contextlib
 import json
 import glob
 import r
-import os
 
 from discord.ext import commands
 from discord import NotFound, Embed,  Forbidden
 
-admin_list = os.environ['DISCORD_BOT_DEVELOPER']
+admin_list = 459936557432963103
 
 def cleanup_code(content):
     if content.startswith('```') and content.endswith('```'):
