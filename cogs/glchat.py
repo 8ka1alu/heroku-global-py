@@ -29,8 +29,7 @@ class global_chat(commands.Cog):
             #発言時、頭にprefixがついていたらpass
 
             else:
-                if not message.attachments:
-                    await message.delete()
+                await message.delete()
                 if message.attachments:
                     if message.content:
                         embed = discord.Embed(title=message.content,
