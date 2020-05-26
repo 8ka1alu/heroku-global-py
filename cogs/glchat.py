@@ -3,6 +3,7 @@ import discord
 import r
 import os
 prefix = os.environ['DISCORD_BOT_PREFIX']
+ng_word=['@here','@everyone','@']
 
 # コグとして用いるクラスを定義。
 class global_chat(commands.Cog):
@@ -13,6 +14,8 @@ class global_chat(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
         if message.author.bot:
+            return
+        if message.content in ng_word:
             return
         count=0
         conn=r.connect()
